@@ -7,7 +7,7 @@ function Billing() {
   const navigate = useNavigate();
 
   const checkout = async () => {
-    await fetch("http://localhost:4000/checkout", {
+    await fetch("https://ecommerce-chair.onrender.com/checkout", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
