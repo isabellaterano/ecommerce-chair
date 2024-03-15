@@ -2,11 +2,19 @@ const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
 const stripe = require("stripe")(process.env.STRIPE_KEY);
-const app = express();
+const path = require("node:path");
 
 app.use(cors());
 app.use(express.static("public"));
 app.use(express.json());
+
+const __dirname = path.resolve();
+
+app.use(express.static(path.join(__dirname, "/client/dist")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
+});
 
 app.post("/checkout", async (req, res) => {
   const items = req.body.items;
