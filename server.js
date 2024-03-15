@@ -1,12 +1,22 @@
+const path = require("node:path");
+const { fileURLToPath } = require("node:url");
 const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
 const stripe = require("stripe")(process.env.STRIPE_KEY);
-
 const app = express();
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 app.use(cors());
 app.use(express.static("public"));
 app.use(express.json());
+app.use(express.static(path.join(__dirname, "/client/dist")));
+
+app.get("*", (req, res) =>
+  res.sendFile(path.join(__dirname, "/client/dist/index.html"))
+);
 
 app.post("/checkout", async (req, res) => {
   const items = req.body.items;
