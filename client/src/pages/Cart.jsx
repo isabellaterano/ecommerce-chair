@@ -14,7 +14,7 @@ const Cart = () => {
   );
 
   return (
-    <div className="max-w-7xl container mx-auto px-4 mb-8">
+    <div className="container mx-auto px-4 mb-8 w-full min-h-screen">
       <h1 className="text-center text-3xl font-extrabold m-8">
         Shopping<span className="border-b-2 border-b-primary"> Cart</span>
       </h1>
@@ -36,8 +36,10 @@ const Cart = () => {
               </div>
             </>
           ) : (
-            <div className="flex flex-wrap flex-col items-center justify-center  h-80">
-              <h1>There are no items in your cart!</h1>
+            <div className="flex flex-wrap flex-col items-center justify-center h-screen">
+              <h1 className="font-bold mb-4">
+                There are no items in your cart!
+              </h1>
               <button
                 onClick={() => navigate("/chairs")}
                 className="btn bg-primary"
