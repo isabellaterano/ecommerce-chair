@@ -3,7 +3,7 @@ const products = [
     id: "price_1OfRseHADQctk6aDBOyE2oO3",
     name: "JASON LOUNGE CHAIR",
     price: 150,
-    image: "/chair4.png",
+    image: "/images/chair4.png",
     description:
       "Introducing our chair, a harmonious blend of modern elegance and timeless comfort. Crafted with meticulous attention to detail, this chair is more than just a piece of furniture; it's an invitation to unwind and relax in style.",
   },
@@ -11,7 +11,7 @@ const products = [
     id: "price_1OfRt1HADQctk6aDKk127Iwn",
     name: "KRAMER LOUNGE CHAIR",
     price: 290,
-    image: "/chair5.png",
+    image: "/images/chair5.png",
     description:
       "Introducing our chair, a harmonious blend of modern elegance and timeless comfort. Crafted with meticulous attention to detail, this chair is more than just a piece of furniture; it's an invitation to unwind and relax in style.",
   },
@@ -19,7 +19,7 @@ const products = [
     id: "price_1OfRqwHADQctk6aDgneisIxJ",
     name: "NORMAN LOUNGE CHAIR",
     price: 150,
-    image: "/chair3.png",
+    image: "/images/chair3.png",
     description:
       "Introducing our chair, a harmonious blend of modern elegance and timeless comfort. Crafted with meticulous attention to detail, this chair is more than just a piece of furniture; it's an invitation to unwind and relax in style.",
   },
@@ -27,7 +27,7 @@ const products = [
     id: "price_1OfRtaHADQctk6aDkst0rP0O",
     name: "CARRIE LOUNGE CHAIR",
     price: 270,
-    image: "/chair6.png",
+    image: "/images/chair6.png",
     description:
       "Introducing our chair, a harmonious blend of modern elegance and timeless comfort. Crafted with meticulous attention to detail, this chair is more than just a piece of furniture; it's an invitation to unwind and relax in style.",
   },
@@ -35,7 +35,7 @@ const products = [
     id: "price_1OfRtuHADQctk6aDwtT3MMno",
     name: "FREDDY LOUNGE CHAIR",
     price: 300,
-    image: "/chair7.png",
+    image: "/images/chair7.png",
     description:
       "Introducing our chair, a harmonious blend of modern elegance and timeless comfort. Crafted with meticulous attention to detail, this chair is more than just a piece of furniture; it's an invitation to unwind and relax in style.",
   },
@@ -43,7 +43,7 @@ const products = [
     id: "price_1OfRuFHADQctk6aDkdn2k4MS",
     name: "MICHAEL LOUNGE CHAIR",
     price: 500,
-    image: "/chair8.png",
+    image: "/images/chair8.png",
     description:
       "Introducing our chair, a harmonious blend of modern elegance and timeless comfort. Crafted with meticulous attention to detail, this chair is more than just a piece of furniture; it's an invitation to unwind and relax in style.",
   },
@@ -51,7 +51,7 @@ const products = [
     id: "price_1OfRudHADQctk6aDpoGyO82m",
     name: "LECTER LOUNGE CHAIR",
     price: 355,
-    image: "/chair1.png",
+    image: "/images/chair1.png",
     description:
       "Introducing our chair, a harmonious blend of modern elegance and timeless comfort. Crafted with meticulous attention to detail, this chair is more than just a piece of furniture; it's an invitation to unwind and relax in style.",
   },
@@ -59,7 +59,7 @@ const products = [
     id: "price_1OfRv1HADQctk6aD74mTqpQk",
     name: "SAMARA LOUNGE CHAIR",
     price: 460,
-    image: "/chair2.png",
+    image: "/images/chair2.png",
     description:
       "Introducing our chair, a harmonious blend of modern elegance and timeless comfort. Crafted with meticulous attention to detail, this chair is more than just a piece of furniture; it's an invitation to unwind and relax in style.",
   },

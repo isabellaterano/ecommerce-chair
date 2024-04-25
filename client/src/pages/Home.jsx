@@ -31,7 +31,7 @@ const Home = () => {
           </div>
           <div>
             <img
-              src="/image2.jpg"
+              src="/images/image2.jpg"
               alt="chair"
               className="w-[350px] rounded-md"
             />
