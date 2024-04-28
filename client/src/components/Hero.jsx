@@ -1,21 +1,51 @@
 import { useNavigate } from "react-router-dom";
 import { FaChevronRight } from "react-icons/fa6";
+import Chair from "../components/Chair";
+import { BakeShadows, OrbitControls, Stage } from "@react-three/drei";
+import { Canvas } from "@react-three/fiber";
+
+const Model = () => {
+  const chairPositionFactor = window.innerWidth / 1300;
+  const isMobile = window.innerWidth < 1024;
+
+  return (
+    <group>
+      <Stage environment="sunset">
+        <Chair
+          position-x={isMobile ? 0 : 1.2 * chairPositionFactor}
+          position-y={isMobile ? -2 : -1}
+        />
+      </Stage>
+      <BakeShadows />
+      <ambientLight />
+
+      <OrbitControls
+        makeDefault
+        autoRotate
+        enableRotate={false}
+        enableZoom={false}
+      />
+    </group>
+  );
+};
 
 const Hero = () => {
   const navigate = useNavigate();
 
   return (
-    <div
-      className="hero min-h-screen"
-      style={{
-        backgroundImage: "url(/image.jpg)",
-      }}
-    >
-      <div className="hero-overlay bg-opacity-40"></div>
-      <div className="hero-content text-center text-neutral-content">
-        <div className="max-w-md">
-          <h1 className="mb-5 text-5xl font-bold">
-            Elevate Your Space, Redefine Your Style
+    <div className="hero">
+      <div className="hero-content flex-col lg:flex-row lg:gap-44">
+        <div className="h-screen">
+          <Canvas shadows camera={{ position: [0, 2, 8], fov: 50 }}>
+            <Model />
+          </Canvas>
+        </div>
+
+        <div className="max-w-lg">
+          <h1 className="mb-5 text-5xl font-bold leading-tight tracking-wider">
+            <span className="text-neutral font-black">Elevate </span>
+            Your Space <br />
+            Redefine Your Style
           </h1>
           <p className="mb-5">
             Browse through our curated collection of chairs, meticulously
