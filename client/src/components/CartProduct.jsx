@@ -20,10 +20,9 @@ const CartProduct = (props) => {
           />
           <div className="sm:ml-4 sm:flex sm:w-full sm:justify-between">
             <div className="mt-5 sm:mt-0">
-              <h2 className="text-lg font-bold text-gray-900">
-                {productData.title}
-              </h2>
-              <p className="mt-1 text-sm text-gray-700">{productData.name}</p>
+              <p className="mt-1 text-sm text-gray-700 font-bold">
+                {productData.name}
+              </p>
               <p className="mt-1 text-sm text-gray-700">
                 Price: ${productData.price}
               </p>

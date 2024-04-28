@@ -10,12 +10,8 @@ const Header = () => {
   );
   const navigate = useNavigate();
 
-  const handleClick = () => {
-    navigate("/cart");
-  };
-
   return (
-    <div className="navbar bg-base-100">
+    <header className="navbar shadow-md ">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -49,12 +45,16 @@ const Header = () => {
             </li>
           </ul>
         </div>
-        <NavLink className="btn btn-ghost text-xl">
-          <img src="/logo.png" alt="" width={28} /> Chair
+        <NavLink className="btn btn-ghost text-xl uppercase font-black">
+          {" "}
+          Chair.
         </NavLink>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
+        <ul className="menu menu-horizontal px-1 uppercase font-medium">
+          <li>
+            <NavLink to="/">Home</NavLink>
+          </li>
           <li>
             <NavLink to="/chairs">Chairs</NavLink>
           </li>
@@ -105,7 +105,7 @@ const Header = () => {
                 </span>
                 <div className="card-actions">
                   <button
-                    onClick={handleClick}
+                    onClick={() => navigate("/cart")}
                     className="btn btn-primary btn-block"
                   >
                     View cart
@@ -116,7 +116,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-    </div>
+    </header>
   );
 };
 

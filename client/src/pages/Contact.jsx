@@ -1,6 +1,6 @@
 const Contact = () => {
   return (
-    <div className="min-h-dvh">
+    <section className="min-h-dvh">
       <h1 className="text-center text-3xl font-extrabold m-8 ">
         Con<span className="border-b-2 border-b-primary">tact</span>
       </h1>
@@ -47,7 +47,7 @@ const Contact = () => {
         </label>
         <button className="btn btn-primary mt-8 w-80">Send</button>
       </form>
-    </div>
+    </section>
   );
 };
 

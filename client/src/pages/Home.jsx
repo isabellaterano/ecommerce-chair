@@ -10,9 +10,9 @@ const Home = () => {
       <Hero />
       <CardHome />
 
-      <section>
-        <div className="grid grid-cols-1 md:grid-cols-2 place-items-center mx-10 my-12 py-12">
-          <div>
+      <section className="bg-base-200 flex items-center justify-center flex-col mb-7">
+        <div className="grid grid-cols-1 md:grid-cols-2 place-items-center mx-12 my-12 lg:ml-36">
+          <div className="">
             <h4 className="text-2xl mb-4 font-bold ">
               Where Every Piece Tells a Story of Comfort and Design
             </h4>

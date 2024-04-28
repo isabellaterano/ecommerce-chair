@@ -46,13 +46,13 @@ function Billing() {
         </div>
         <button
           onClick={checkout}
-          className="mt-6 w-full rounded-md bg-primary py-1.5 font-medium text-blue-50 hover:opacity-60"
+          className="mt-6 w-full rounded-md bg-primary py-1.5 font-medium text-black hover:opacity-60"
         >
           Checkout
         </button>
         <button
           onClick={() => navigate("/chairs")}
-          className="mt-2 w-full rounded-md bg-secondary opacity-60 py-1.5 font-medium text-blue-50 hover:bg-blue-600"
+          className="mt-2 w-full rounded-md bg-secondary py-1.5 font-medium text-black hover:opacity-60 "
         >
           Continue Shopping
         </button>

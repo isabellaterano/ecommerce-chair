@@ -36,8 +36,8 @@ const Cart = () => {
               </div>
             </>
           ) : (
-            <div className="flex flex-wrap flex-col items-center justify-center h-screen">
-              <h1 className="font-bold mb-4">
+            <div className="md:flex-col flex">
+              <h1 className="font-bold mb-4 text-center">
                 There are no items in your cart!
               </h1>
               <button
