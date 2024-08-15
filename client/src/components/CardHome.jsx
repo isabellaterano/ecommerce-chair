@@ -4,36 +4,43 @@ import { MdSupportAgent } from "react-icons/md";
 
 const CardHome = () => {
   return (
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 grid-cols-1 my-12 md:mx-8 place-items-center py-8">
-      <div className="card w-72 h-56 bg-secondary text-primary-content shadow-xl ">
-        <div className="card-body items-center text-center">
-          <FaTruckFast className="w-7 h-10" />
-          <h2 className="card-title">Free Shipping</h2>
-          <p className="text-sm">
-            Our free shipping policy applies to all orders, regardless of order
-            value or destination.
-          </p>
+    <section className="bg-base-200 py-28 px-4">
+      <h2 className="text-3xl font-bold text-center mb-8 text-primary">
+        Why Shop With Us?
+      </h2>
+      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mx-auto max-w-screen-lg">
+        <div className="card bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+          <div className="card-body flex flex-col items-center text-center p-6">
+            <FaTruckFast className="text-4xl text-primary mb-4" />
+            <h3 className="text-xl font-semibold mb-2">Free Shipping</h3>
+            <p className="text-gray-600">
+              Enjoy free shipping on all orders, no matter the size or
+              destination.
+            </p>
+          </div>
         </div>
-      </div>
 
-      <div className="card w-72 h-56 bg-secondary text-primary-content shadow-xl">
-        <div className="card-body items-center text-center">
-          <RiSecurePaymentFill className="w-7 h-10" />
-          <h2 className="card-title">Secure Payments</h2>
-          <p className="text-sm">
-            Your payments is always safe, secure, and protected at all times.
-          </p>
+        <div className="card bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+          <div className="card-body flex flex-col items-center text-center p-6">
+            <RiSecurePaymentFill className="text-4xl text-primary mb-4" />
+            <h3 className="text-xl font-semibold mb-2">Secure Payments</h3>
+            <p className="text-gray-600">
+              Your payment information is encrypted and secure with us.
+            </p>
+          </div>
         </div>
-      </div>
 
-      <div className="card w-72 h-56 bg-secondary text-primary-content shadow-xl">
-        <div className="card-body items-center text-center">
-          <MdSupportAgent className="w-7 h-10" />
-          <h2 className="card-title">24/7 Support</h2>
-          <p className="text-sm">We support online all days.</p>
+        <div className="card bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+          <div className="card-body flex flex-col items-center text-center p-6">
+            <MdSupportAgent className="text-4xl text-primary mb-4" />
+            <h3 className="text-xl font-semibold mb-2">24/7 Support</h3>
+            <p className="text-gray-600">
+              We're here to assist you anytime, any day.
+            </p>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

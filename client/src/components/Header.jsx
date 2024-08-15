@@ -11,13 +11,13 @@ const Header = () => {
   const navigate = useNavigate();
 
   return (
-    <header className="navbar shadow-md ">
+    <header className="navbar bg-base-100 shadow-lg z-50 fixed">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
+              className="h-6 w-6"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -35,34 +35,47 @@ const Header = () => {
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
-              <NavLink to="/chairs">Chairs</NavLink>
+              <NavLink to="/chairs" className="hover:text-primary">
+                Chairs
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/about">About</NavLink>
+              <NavLink to="/about" className="hover:text-primary">
+                About
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/contact">Contact</NavLink>
+              <NavLink to="/contact" className="hover:text-primary">
+                Contact
+              </NavLink>
             </li>
           </ul>
         </div>
-        <NavLink className="btn btn-ghost text-xl uppercase font-black">
-          {" "}
-          Chair.
+        <NavLink className="btn btn-ghost text-2xl font-extrabold uppercase">
+          Chair <span className="text-primary">.</span>
         </NavLink>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 uppercase font-medium">
+        <ul className="menu menu-horizontal px-1 text-lg font-semibold">
           <li>
-            <NavLink to="/">Home</NavLink>
+            <NavLink to="/" className="hover:text-primary">
+              Home
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/chairs">Chairs</NavLink>
+            <NavLink to="/chairs" className="hover:text-primary">
+              Chairs
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/about">About</NavLink>
+            <NavLink to="/about" className="hover:text-primary">
+              About
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/contact">Contact</NavLink>
+            <NavLink to="/contact" className="hover:text-primary">
+              Contact
+            </NavLink>
           </li>
         </ul>
       </div>
@@ -77,7 +90,7 @@ const Header = () => {
               <div className="indicator">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5"
+                  className="h-6 w-6"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"

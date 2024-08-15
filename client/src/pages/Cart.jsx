@@ -14,41 +14,39 @@ const Cart = () => {
   );
 
   return (
-    <div className="container mx-auto px-4 mb-8 w-full min-h-screen">
-      <h1 className="text-center text-3xl font-extrabold m-8">
-        Shopping<span className="border-b-2 border-b-primary"> Cart</span>
+    <div className="container mx-auto px-4 py-28">
+      <h1 className="text-center text-4xl font-extrabold mb-8">
+        Shopping<span className="border-b-4 border-b-primary"> Cart</span>
       </h1>
       <div className="container mx-auto">
-        <div className="flex flex-col md:flex-row justify-between md:gap-8 gap-4">
-          {productsCount > 0 ? (
-            <>
-              <div className="space-y-6 md:w-2/3">
-                {cart.items.map((currentProduct, idx) => (
-                  <CartProduct
-                    key={idx}
-                    id={currentProduct.id}
-                    quantity={currentProduct.quantity}
-                  ></CartProduct>
-                ))}
-              </div>
-              <div className="md:w-1/3">
-                <Billing />
-              </div>
-            </>
-          ) : (
-            <div className="md:flex-col flex">
-              <h1 className="font-bold mb-4 text-center">
-                There are no items in your cart!
-              </h1>
-              <button
-                onClick={() => navigate("/chairs")}
-                className="btn bg-primary"
-              >
-                Continue Shopping
-              </button>
+        {productsCount > 0 ? (
+          <div className="flex flex-col md:flex-row justify-between md:gap-12 gap-8">
+            <div className="space-y-6 md:w-2/3">
+              {cart.items.map((currentProduct, idx) => (
+                <CartProduct
+                  key={idx}
+                  id={currentProduct.id}
+                  quantity={currentProduct.quantity}
+                />
+              ))}
             </div>
-          )}
-        </div>
+            <div className="md:w-1/3">
+              <Billing />
+            </div>
+          </div>
+        ) : (
+          <div className="flex flex-col items-center text-center py-12">
+            <h2 className="text-xl font-bold mb-4">
+              There are no items in your cart!
+            </h2>
+            <button
+              onClick={() => navigate("/chairs")}
+              className="btn btn-primary"
+            >
+              Continue Shopping
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
