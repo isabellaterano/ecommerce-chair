@@ -2,6 +2,7 @@ import { ShopContext } from "../context/ShopContext";
 import { useContext } from "react";
 import { getProductData } from "../products";
 import { MdClose } from "react-icons/md";
+import { HiMinus, HiPlus } from "react-icons/hi2";
 
 const CartProduct = (props) => {
   const cart = useContext(ShopContext);
@@ -9,59 +10,73 @@ const CartProduct = (props) => {
   const quantity = props.quantity;
   const productData = getProductData(id);
 
+  // Fallback caso o produto não seja encontrado para evitar quebras de renderização
+  if (!productData) return null;
+
+  const formattedPrice =
+    typeof productData.price === "string" && productData.price.includes("$")
+      ? productData.price
+      : `$${productData.price}`;
+
   return (
-    <div>
-      <div className="rounded-lg">
-        <div className="justify-between mb-6 rounded-lg bg-slate-100 p-6 shadow-md sm:flex sm:justify-start">
-          <img
-            src={productData.image}
-            alt="product-image"
-            className="w-full rounded-lg sm:w-40"
-          />
-          <div className="sm:ml-4 sm:flex sm:w-full sm:justify-between">
-            <div className="mt-5 sm:mt-0">
-              <p className="mt-1 text-sm text-gray-700 font-bold">
-                {productData.name}
-              </p>
-              <p className="mt-1 text-sm text-gray-700">
-                Price: ${productData.price}
-              </p>
-            </div>
-
-            <div className="mt-4 flex justify-between sm:space-y-6 sm:mt-0 sm:block sm:space-x-6">
-              <div className="flex items-center border-gray-100 ">
-                <div>
-                  <span
-                    onClick={() => cart.removeOneFromCart(id)}
-                    className="cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-primary text-zinc-800 hover:text-blue-50"
-                  >
-                    -
-                  </span>
-                  <span className="h-w-8 border-none bg-gray-100 text-center text-xs outline-none px-2 text-zinc-800 ">
-                    {quantity}
-                  </span>
-                  <span
-                    onClick={() => cart.addOneToCart(id)}
-                    className="cursor-pointer rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-primary hover:text-blue-50 text-zinc-800 "
-                  >
-                    +
-                  </span>
-                </div>
-
-                <div className="flex items-center space-x-4 ml-40">
-                  <button
-                    className="lws-removeFromCart"
-                    onClick={() => cart.deleteFromCart(id)}
-                  >
-                    <MdClose
-                      color="#fff"
-                      className="bg-primary rounded-full p-1 w-7 h-7"
-                    />
-                  </button>
-                </div>
-              </div>
-            </div>
+    <div className="group relative bg-white border border-zinc-100 rounded-2xl p-4 sm:p-5 shadow-sm hover:shadow-md transition-all duration-300 mb-4">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        {/* PRODUCT DETAILS GROUP */}
+        <div className="flex items-center gap-4 sm:gap-6">
+          {/* IMAGE CONTAINER */}
+          <div className="w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-b from-zinc-50 to-zinc-100/50 border border-zinc-100 rounded-xl flex items-center justify-center p-2 flex-shrink-0 overflow-hidden">
+            <img
+              src={productData.image}
+              alt={productData.name}
+              className="max-w-full max-h-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-500"
+            />
           </div>
+
+          {/* TEXT SPECS */}
+          <div>
+            <h3 className="text-zinc-950 font-bold text-sm sm:text-base tracking-tight leading-snug">
+              {productData.name}
+            </h3>
+            <p className="text-zinc-400 text-xs mt-0.5">Premium Line</p>
+            <p className="text-zinc-950 font-extrabold text-sm sm:text-base tracking-tight mt-2">
+              {formattedPrice}
+            </p>
+          </div>
+        </div>
+
+        {/* CONTROLS & DELETION GROUP */}
+        <div className="flex items-center justify-between sm:justify-end gap-6 border-t sm:border-t-0 pt-3 sm:pt-0 border-zinc-100/80">
+          {/* STEPPER QUANTITY CONTROLLER */}
+          <div className="flex items-center bg-zinc-50 border border-zinc-200/80 rounded-full p-1 shadow-inner">
+            <button
+              onClick={() => cart.removeOneFromCart(id)}
+              className="w-7 h-7 rounded-full flex items-center justify-center text-zinc-500 hover:bg-white hover:text-zinc-900 active:scale-95 transition-all"
+              aria-label="Decrease quantity"
+            >
+              <HiMinus className="w-3 h-3" />
+            </button>
+
+            <span className="w-8 text-center text-zinc-900 font-bold text-xs select-none">
+              {quantity}
+            </span>
+
+            <button
+              onClick={() => cart.addOneToCart(id)}
+              className="w-7 h-7 rounded-full flex items-center justify-center text-zinc-500 hover:bg-white hover:text-zinc-900 active:scale-95 transition-all"
+              aria-label="Increase quantity"
+            >
+              <HiPlus className="w-3 h-3" />
+            </button>
+          </div>
+
+          {/* ACTION DELETE BUTTON */}
+          <button
+            onClick={() => cart.deleteFromCart(id)}
+            className="text-zinc-400 hover:text-red-500 hover:bg-red-50 p-2 rounded-full transition-colors duration-200 flex items-center justify-center"
+            aria-label={`Remove all ${productData.name} from cart`}
+          >
+            <MdClose className="w-5 h-5" />
+          </button>
         </div>
       </div>
     </div>
